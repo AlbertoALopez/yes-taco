@@ -5,6 +5,18 @@
 @import "_colors.scss";
 
 
+/* Fonts
+ ========================================================================== */
+@font-face {
+  font-family: 'Mexicana';
+  src: url('./fonts/cfmexicana.woff2') format('woff2'),
+       url('./fonts/cfmexicana.woff') format('woff'),
+       url('./fonts/cfmexicana.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* Body
  ========================================================================== */
 
@@ -12,3 +24,10 @@
   font-family: 'Fira Sans', sans-serif;
   font-weight: 300;
  }
+
+ /* Headings
+ ========================================================================== */
+
+ // h1 {
+ //  font-family: 'cfmexicana', sans-serif;
+ // }

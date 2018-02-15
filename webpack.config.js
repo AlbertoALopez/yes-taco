@@ -38,19 +38,20 @@ module.exports = {
       {
         test: /\.scss$/,
         use: extractSass.extract({
-          use: [{
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
-          }, {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          }],
+          use: [
+            { loader: 'css-loader', options: { sourceMap: true } },
+            { loader: 'resolve-url-loader', options: { sourceMap: true } },
+            { loader: 'sass-loader', options: { sourceMap: true } },
+          ],
           fallback: 'style-loader',
         }),
+      },
+      {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[ext]',
+        },
       },
     ],
   },
