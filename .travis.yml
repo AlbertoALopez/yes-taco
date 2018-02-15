@@ -2,7 +2,9 @@ sudo: false
 language: node_js
 node_js: node
 cache: npm
-install: npm install
+install:
+  - npm install -g now-cli
+  - npm install
 script: npm run deploy
 after_script: npm run alias
 env:
