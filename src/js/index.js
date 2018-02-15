@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(
-  <h1>Hello, World!</h1>,
-  document.getElementById('root'),
+import App from './components/App';
+
+export default ReactDOM.render(
+  <App />,
+  document.getElementById('root') || document.createElement('div'),
 );
