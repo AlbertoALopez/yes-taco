@@ -53,6 +53,15 @@ module.exports = {
           name: 'fonts/[name].[ext]',
         },
       },
+      // Antd styles
+      {
+        test: /\.css$/,
+        include: [/node_modules\/.*antd/],
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+        ],
+      },
     ],
   },
   plugins: [

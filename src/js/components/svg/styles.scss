@@ -4,6 +4,51 @@
 
 }
 
-path {
-  fill: $taco-svg;
+svg {
+  max-width: 95%;
+  max-height: 95%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  path {
+    fill-opacity: 0;
+    fill: $taco-svg;
+    stroke: #000;
+    stroke-width: 5;
+    stroke-dasharray: 80826.6171875;
+    stroke-dashoffset: 80826.6171875;
+    //animation: draw 5s infinite linear;
+    // animation-name: draw;
+    // animation-duration: 10s;
+    // animation-iteration-count: infinite;
+    // animation-fill-mode: forwards;
+    // animation-timing-function: linear;
+    -moz-animation: draw 5s linear 1s infinite forwards;
+    -webkit-animation: draw 5s linear 1s infinite forwards;
+    animation: draw 5s linear 1s infinite forwards;
+  }
+}
+
+@-webkit-keyframes draw {
+  0% {stroke-dashoffset: 80826.6171875;}
+  50% { 
+    fill-opacity:0;
+  }
+  100% {
+    stroke-dashoffset:0;
+    fill-opacity:1;
+  }
+}
+@-moz-keyframes draw {
+  0% {stroke-dashoffset: 80826.6171875;}
+  50% { 
+    fill-opacity:0;
+  }
+  100% {
+    stroke-dashoffset:0;
+    fill-opacity:1;
+  }
 }
