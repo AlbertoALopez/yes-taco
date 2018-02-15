@@ -2,6 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HotModuleReplacementPlugin = require('webpack-hot-middleware');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractSass = new ExtractTextPlugin({
+  filename: '[name].[contenthash].css',
+  disable: process.env.NODE_ENV === 'development',
+});
+
 
 module.exports = {
   entry: [
@@ -28,6 +35,23 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.scss$/,
+        use: extractSass.extract({
+          use: [{
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          }, {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          }],
+          fallback: 'style-loader',
+        }),
+      },
     ],
   },
   plugins: [
@@ -35,5 +59,6 @@ module.exports = {
       template: './dist/index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
+    extractSass,
   ],
 };
