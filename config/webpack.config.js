@@ -30,19 +30,21 @@ module.exports = {
         },
       },
       {
+        test: /\.scss$/,
+        use: [
+          { loader: 'style-loader', options: { sourceMap: true } },
+          { loader: 'css-loader', options: { sourceMap: true } },
+          { loader: 'resolve-url-loader', options: { sourceMap: true } },
+          { loader: 'sass-loader', options: { sourceMap: true } },
+        ],
+      },
+      {
         test: /\.css$/,
         include: [/node_modules\/flexboxgrid/],
         use: [
           { loader: 'style-loader' },
           { loader: 'css-loader' },
-        ],
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          { loader: 'style-loader', options: { sourceMap: true } },
-          { loader: 'css-loader', options: { sourceMap: true } },
-          { loader: 'sass-loader', options: { sourceMap: true } },
+          { loader: 'resolve-url-loader', options: { sourceMap: true } },
         ],
       },
       {

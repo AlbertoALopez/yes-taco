@@ -5,12 +5,9 @@ exports[`Main renders correctly 1`] = `
   fluid={true}
   id="container"
 >
-  <Col
-    lg={12}
-  >
-    <AppHeader />
-    <SvgOverlay />
-    <AppFooter />
-  </Col>
+  <AppHeader />
+  <Dialog />
+  <SvgOverlay />
+  <AppFooter />
 </Grid>
 `;

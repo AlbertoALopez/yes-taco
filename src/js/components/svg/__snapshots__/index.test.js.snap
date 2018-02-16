@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App renders correctly 1`] = `
+exports[`SvgIcon renders correctly 1`] = `
 <svg
   className="taco-svg"
   height="300"

@@ -3,6 +3,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import Footer from './footer';
 import Header from './header';
 import SvgOverlay from './svgOverlay';
+import Dialog from '../../components/dialog';
 
 import './styles.scss';
 
@@ -12,6 +13,7 @@ class Main extends Component {
     return (
       <Grid fluid id="container">
         <Header />
+        <Dialog />
         <SvgOverlay>
           {this.props.children}
         </SvgOverlay>

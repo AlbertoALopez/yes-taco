@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog renders correctly 1`] = `
+<div
+  className="col-lg-12 col-xs-12"
+>
+  <div
+    className="row center-xs"
+  >
+    <div
+      id="dialog-container"
+    >
+      <p>
+        What have you got there? Is it a taco? Find out by uploading a picture or pointing us to a URL!
+      </p>
+    </div>
+  </div>
+</div>
+`;

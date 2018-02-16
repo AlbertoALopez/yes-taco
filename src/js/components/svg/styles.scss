@@ -1,7 +1,7 @@
 @import "../../../style/_colors.scss";
 
 .taco-svg {
-  display: block;
+
 }
 
 svg {
@@ -17,6 +17,7 @@ svg {
     -moz-animation: draw 5s linear 1s 1 forwards;
     -webkit-animation: draw 5s linear 1s 1 forwards;
     animation: draw 5s linear 1s 1 forwards;
+    animation-delay: 5s;
   }
 }
 

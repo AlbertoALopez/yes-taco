@@ -16,12 +16,16 @@
   "author": "Alberto Lopez",
   "license": "ISC",
   "dependencies": {
+    "animated": "^0.2.2",
     "babel-plugin-import": "^1.6.4",
     "express": "^4.16.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-flexbox-grid": "^2.0.0",
     "react-hot-loader": "^3.1.3",
+    "react-router-dom": "^4.2.2",
+    "react-transition-group": "^2.2.1",
+    "semantic-ui-css": "^2.2.14",
     "semantic-ui-react": "^0.78.2",
     "webpack-dev-middleware": "^2.0.5",
     "webpack-hot-middleware": "^2.21.0"
@@ -54,6 +58,7 @@
     "resolve-url-loader": "^2.2.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.20.1",
+    "url-loader": "^0.6.2",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1",
     "webpack-merge": "^4.1.1"

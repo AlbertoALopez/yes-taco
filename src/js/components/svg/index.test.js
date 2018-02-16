@@ -1,9 +1,9 @@
 import React from 'react';
-import App from './index.js';
+import SvgIcon from './index.js';
 import renderer from 'react-test-renderer';
 
-test('App renders correctly', () => {
-  const tree = renderer.create(<App />).toJSON();
+test('SvgIcon renders correctly', () => {
+  const tree = renderer.create(<SvgIcon />).toJSON();
 
   expect(tree).toMatchSnapshot();
 });
