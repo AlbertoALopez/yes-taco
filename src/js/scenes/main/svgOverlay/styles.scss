@@ -1,6 +1,9 @@
 #svg-overlay-container {
-  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: center;
+  height: 70%;
+  transform: translateY(-33%);
+  transition: 4s ease-in-out;
 }

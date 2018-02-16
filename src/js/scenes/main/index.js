@@ -11,13 +11,11 @@ class Main extends Component {
   render() {
     return (
       <Grid fluid id="container">
-        <Col lg={12}>
-          <Header />
-          <SvgOverlay>
-            {this.props.children}
-          </SvgOverlay>
-          <Footer />
-        </Col>
+        <Header />
+        <SvgOverlay>
+          {this.props.children}
+        </SvgOverlay>
+        <Footer />
       </Grid>
     );
   }
