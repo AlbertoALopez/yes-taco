@@ -1,28 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
 
-
-// import App from './components/App';
-import Main from './scenes/main';
+import App from './scenes';
 
 import '../style/index.scss';
 
 
 const render = (Component) => {
   ReactDOM.render(
-    <AppContainer>
-      <Component />
-    </AppContainer>,
+    <Component />,
     document.getElementById('root'),
   );
 };
 
-render(Main);
+render(App);
 
-// Webpack HMR
+// Conditional test for React hot module reload
+// Listens for changes in source JS and merges them into active bundle
+// Bug: forces refresh in browser when using react router
 if (module.hot) {
   module.hot.accept('./scenes/main', () => {
-    render(Main);
+    render(App);
   });
 }
