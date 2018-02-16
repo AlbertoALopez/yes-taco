@@ -12,7 +12,8 @@ const extractSass = new ExtractTextPlugin({
 
 module.exports = {
   entry: [
-    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+    'webpack-hot-middleware/client?reload=true',
+    'react-hot-loader/patch',
     './src/js/index.js',
   ],
   output: {
@@ -53,10 +54,9 @@ module.exports = {
           name: 'fonts/[name].[ext]',
         },
       },
-      // Antd styles
       {
         test: /\.css$/,
-        include: [/node_modules\/.*antd/],
+        include: [/node_modules\/flexboxgrid/],
         use: [
           { loader: 'style-loader' },
           { loader: 'css-loader' },

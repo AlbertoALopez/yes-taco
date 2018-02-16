@@ -1,6 +1,22 @@
 {
-  "presets": ["env", "react"],
+  "presets": [["env", { "modules": false }], "react", "stage-2"],
   "plugins": [
-    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
-  ]
+    ["react-hot-loader/babel"]
+  ],
+  "env": {
+    "development": {
+      "plugins": ["react-hot-loader/babel"]
+    },
+    "test": {
+      "presets": [
+        ["env", {"modules": "commonjs"}],
+        "react",
+        "stage-2"
+      ],
+      "plugins": [
+        "dynamic-import-node",
+        "transform-es2015-modules-commonjs"
+      ]
+    }
+  }
 }
