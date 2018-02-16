@@ -1,11 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Main renders correctly 1`] = `
-<div
-  className="content-container"
+<Grid
+  fluid={true}
+  id="container"
 >
-  <AppHeader />
-  <SvgOverlay />
-  <AppFooter />
-</div>
+  <Col
+    lg={12}
+  >
+    <AppHeader />
+    <SvgOverlay />
+    <AppFooter />
+  </Col>
+</Grid>
 `;

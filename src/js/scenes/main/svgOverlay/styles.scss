@@ -1,6 +1,6 @@
 #svg-overlay-container {
-  position: relative;
-  // height: 100%;
-  // background-color: black;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
