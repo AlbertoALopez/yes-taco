@@ -1,0 +1,40 @@
+#header-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+#intro-title {
+  font-size: 7rem;
+  background-color: #000;
+  color: #000;
+  outline-color: #000;
+  outline-style: none;
+  background: transparent;
+  font-family: 'Mexicana';
+}
+
+@media all and (max-width: 1690px) {
+  #intro-title {
+    font-size: 7rem;
+  }
+}
+@media all and (max-width: 1280px) {
+    #intro-title {
+    font-size: 5rem;
+  }
+}
+@media all and (max-width: 980px) {
+  #intro-title {
+    font-size: 6rem;
+  }
+}
+@media all and (max-width: 736px) {
+  #intro-title {
+    font-size: 6rem;
+  }
+}
+@media all and (max-width: 480px) {
+  #intro-title {
+    font-size: 3rem;
+  }
+}

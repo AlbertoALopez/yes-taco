@@ -1,14 +1,14 @@
 import React from 'react';
-import { Layout } from 'antd';
+import { Row, Col } from 'react-flexbox-grid';
 import './styles.scss';
-
-const { Header } = Layout;
 
 
 const AppHeader = props => (
-  <Header id="app-header">
-    Header
-  </Header>
+  <Row>
+    <Col id="header-container" lg={12}>
+      <div id="intro-title">YES TACO</div>
+    </Col>
+  </Row>
 );
 
 export default AppHeader;
