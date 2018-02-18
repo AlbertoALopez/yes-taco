@@ -6,7 +6,23 @@ exports[`Main renders correctly 1`] = `
   id="container"
 >
   <AppHeader />
-  <Dialog />
+  <Dialog
+    dialogText="What have you got there? Is it a taco? Find out by uploading a picture or pointing us to a URL!"
+    transitionId="main-intro-dialog"
+  >
+    <button>
+      <Link
+        replace={false}
+        to="/upload"
+      >
+        Link to upload screen
+      </Link>
+    </button>
+  </Dialog>
+  <Route
+    component={[Function]}
+    path="/upload"
+  />
   <SvgOverlay />
   <AppFooter />
 </Grid>

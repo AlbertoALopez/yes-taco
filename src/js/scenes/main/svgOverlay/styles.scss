@@ -1,4 +1,9 @@
 #svg-overlay-container {
   display: flex;
-  height: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  width: 99%;
 }

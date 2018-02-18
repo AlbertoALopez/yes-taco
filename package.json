@@ -19,6 +19,7 @@
     "animated": "^0.2.2",
     "babel-plugin-import": "^1.6.4",
     "express": "^4.16.2",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-flexbox-grid": "^2.0.0",
