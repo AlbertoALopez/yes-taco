@@ -1,3 +1,14 @@
+import * as firebase from 'firebase/app';
+import 'firebase/storage';
+import config from '../../../../config/firebase.config.js';
+
+// Init firebase app
+const app = firebase.initializeApp(config);
+
+// Create reference to image bucket
+const ref = app.storage().ref('images');
+console.log(ref);
+
 export const UPLOAD_IMAGE_START = 'UPLOAD_IMAGE_START';
 
 const uploadImageStart = fileRef => {
