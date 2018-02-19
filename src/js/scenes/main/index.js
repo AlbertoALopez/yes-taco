@@ -17,7 +17,7 @@ import './styles.scss';
 const Main = ({ location }) => {
   // Get only current route, otherwise home
   const currentKey = location.pathname.split('/')[1] || '/';
-  const timeout = { enter: 10000, exit: 200 };
+  const timeout = { enter: 1000, exit: 1000 };
 
   return (
     <Grid fluid id="container">
