@@ -25,18 +25,20 @@ const Main = ({ location }) => {
       <Header />
       <Col lg={12} xs={12}>
         <Row center="xs">
-          <Dialog
-            dialogText="What have you got there? Is it a taco? Find out by uploading a picture or pointing us to a URL!"
-          >
-            <Link to="/upload">
-              <HoverMorphIcon
-                id="icon-arrow-down"
-                baseType="arrowDown"
-                hoverType="plus"
-                size={30}
-              />
-            </Link>
-          </Dialog>
+          <div id="dialog-main">
+            <Dialog
+              dialogText="What have you got there? Is it a taco? Find out by uploading a picture or pointing us to a URL!"
+            >
+              <Link to="/upload">
+                <HoverMorphIcon
+                  id="icon-arrow-down"
+                  baseType="arrowDown"
+                  hoverType="plus"
+                  size={30}
+                />
+              </Link>
+            </Dialog>
+          </div>
         </Row>
       </Col>
       {/* This is a transition wrapper around a react router switch
