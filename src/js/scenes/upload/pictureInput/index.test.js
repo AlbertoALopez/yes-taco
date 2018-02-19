@@ -1,9 +1,11 @@
 import React from 'react';
 import PictureInput from './index.js';
+import 'babel-polyfill';
 
 function setup() {
   const props = {
     uploadToFirebase: jest.fn(),
+    transitionToLoading: jest.fn(),
   };
 
   const enzymeWrapper = mount(<PictureInput {...props} />);
@@ -30,8 +32,8 @@ describe('Component test', () => {
   });
 
   it('Should render correctly', () => {
-    const uploadToFirebase = jest.fn();
-    const wrapper = shallow(<PictureInput uploadToFirebase={uploadToFirebase} />);
+    const { props } = setup();
+    const wrapper = shallow(<PictureInput {...props} />);
 
     expect(wrapper).toMatchSnapshot();
   });
