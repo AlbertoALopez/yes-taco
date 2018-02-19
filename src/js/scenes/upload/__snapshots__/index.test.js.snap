@@ -1,8 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dialog renders correctly 1`] = `
-<Dialog
-  dialogText="This is where you upload"
-  transitionId=""
-/>
+<div
+  className="upload-container"
+>
+  <Col
+    xs={12}
+  >
+    <Row
+      center="xs"
+    >
+      <Dialog>
+        <PictureInput />
+      </Dialog>
+    </Row>
+  </Col>
+</div>
 `;

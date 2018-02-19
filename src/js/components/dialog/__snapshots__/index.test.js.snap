@@ -1,23 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dialog renders correctly 1`] = `
-<Col
-  lg={12}
-  xs={12}
+<div
+  className="dialog-container"
 >
-  <Row
-    center="xs"
+  <p
+    className="dialog-text"
   >
-    <div
-      className="dialog-container"
-      id="testing-id"
-    >
-      <p
-        className="dialog-text"
-      >
-        Testing123
-      </p>
-    </div>
-  </Row>
-</Col>
+    Testing123
+  </p>
+</div>
 `;

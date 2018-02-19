@@ -1,29 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Main renders correctly 1`] = `
-<Grid
-  fluid={true}
-  id="container"
->
-  <AppHeader />
-  <Dialog
-    dialogText="What have you got there? Is it a taco? Find out by uploading a picture or pointing us to a URL!"
-    transitionId="main-intro-dialog"
-  >
-    <button>
-      <Link
-        replace={false}
-        to="/upload"
-      >
-        Link to upload screen
-      </Link>
-    </button>
-  </Dialog>
-  <Route
-    component={[Function]}
-    path="/upload"
-  />
-  <SvgOverlay />
-  <AppFooter />
-</Grid>
+<Route
+  render={[Function]}
+/>
 `;

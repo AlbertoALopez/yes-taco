@@ -5,8 +5,8 @@ exports[`SvgOverlay renders correctly 1`] = `
   id="svg-overlay-container"
 >
   <svg
-    className="taco-svg"
     height="300"
+    id="taco-svg"
     viewBox="0 0 1000 1000"
     width="300"
     x="0px"

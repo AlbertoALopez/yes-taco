@@ -1,11 +1,8 @@
 import React from 'react';
-import Dialog from './index.js';
+import PictureInput from './index.js';
 
 test('Dialog renders correctly', () => {
-  const wrapper = shallow(
-    <Dialog
-      dialogText="Testing123"
-    />);
+  const wrapper = shallow(<PictureInput />);
 
   expect(wrapper).toMatchSnapshot();
 });

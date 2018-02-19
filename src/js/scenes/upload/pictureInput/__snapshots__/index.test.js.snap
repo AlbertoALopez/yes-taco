@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog renders correctly 1`] = `
+<form
+  className="picture-form"
+  onSubmit={[Function]}
+>
+  <Row>
+    <input
+      className="form-input"
+      onChange={[Function]}
+      type="file"
+    />
+  </Row>
+  <button
+    className="form-submit-button"
+    type="submit"
+  >
+    <MorphIcon
+      color="#000"
+      damping={15}
+      size={30}
+      stiffness={150}
+      thickness={1}
+      type="arrowRight"
+    />
+  </button>
+</form>
+`;

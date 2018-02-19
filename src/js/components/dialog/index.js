@@ -11,7 +11,7 @@ const Dialog = props => (
 );
 
 Dialog.propTypes = {
-  dialogText: PropTypes.string.isRequired,
+  dialogText: PropTypes.string,
   children: PropTypes.node,
 };
 

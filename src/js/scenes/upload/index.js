@@ -4,15 +4,16 @@ import { Col, Row } from 'react-flexbox-grid';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
+import PictureInput from './pictureInput';
+
 
 const Upload = props => (
   <div className="upload-container">
-    <Col lg={12} xs={12}>
+    <Col xs={12}>
       <Row center="xs">
-        <Dialog
-          transitionId=""
-          dialogText="This is where you upload"
-        />
+        <Dialog>
+          <PictureInput />
+        </Dialog>
       </Row>
     </Col>
   </div>
