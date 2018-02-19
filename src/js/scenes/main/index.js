@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Switch, Link, Route, withRouter } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { HoverMorphIcon } from 'react-svg-buttons';
 
 import Footer from './footer';
 import Header from './header';
@@ -23,14 +24,24 @@ const Main = ({ location }) => {
     <Grid fluid id="container">
       <Header />
       <Col lg={12} xs={12}>
-        <Row center="lg" center="xs">
+        <Row center="xs">
           <Dialog
             dialogText="What have you got there? Is it a taco? Find out by uploading a picture or pointing us to a URL!"
           >
-            <button><Link to="/upload">Link to upload screen</Link></button>
+            <Link to="/upload">
+              <HoverMorphIcon
+                id="icon-arrow-down"
+                baseType="arrowDown"
+                hoverType="plus"
+                size={30}
+              />
+            </Link>
           </Dialog>
         </Row>
       </Col>
+      {/* This is a transition wrapper around a react router switch
+          All matching routes will be rendered with the fade in/out animation
+      */}
       <TransitionGroup className="main-transition-container">
         <CSSTransition key={currentKey} timeout={timeout} classNames="fade" appear>
           <section className="main-transition-container">
