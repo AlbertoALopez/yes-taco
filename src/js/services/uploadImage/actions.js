@@ -6,8 +6,8 @@ import config from '../../../../config/firebase.config.js';
 const app = firebase.initializeApp(config);
 
 // Create reference to image bucket
-const ref = app.storage().ref('images');
-console.log(ref);
+const storageRef = app.storage().ref('images');
+// console.log(ref);
 
 export const UPLOAD_IMAGE_START = 'UPLOAD_IMAGE_START';
 
@@ -46,7 +46,19 @@ const uploadImage = file => {
   return function action(dispatch) {
     dispatch(uploadImageStart(file));
 
-    return file;
+    // Create a child refrence from the images folder
+    const imageRef = storageRef.child(file.name);
+
+    return imageRef.put(file).then(snapshot => {
+      console.log(snapshot);
+
+      if (snapshot.state !== 'success') {
+        console.log(`Error uploading image: ${snapshot.state}`);
+        return dispatch(uploadImageFailure(snapshot));
+      }
+
+      return dispatch(uploadImageSuccess(snapshot.downloadURL));
+    });
   };
 };
 
