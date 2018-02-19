@@ -7,6 +7,7 @@ import './styles.scss';
 class PictureInput extends Component {
   static propTypes = {
     uploadToFirebase: PropTypes.func.isRequired,
+    transitionToLoading: PropTypes.func.isRequired,
   }
 
   constructor(props) {
@@ -17,10 +18,14 @@ class PictureInput extends Component {
     };
   }
 
-  onFormSubmit = (event) => {
+  // Wrapped async function because of react hot loader bug :(
+  onFormSubmit = event => (async () => {
     event.preventDefault();
-    this.props.uploadToFirebase(this.state.file);
-  }
+
+    await this.props.uploadToFirebase(this.state.file);
+  })().then(() => {
+    this.props.transitionToLoading();
+  });;
 
   onFormChange = (event) => {
     this.setState({
