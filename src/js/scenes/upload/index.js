@@ -11,7 +11,7 @@ import './styles.scss';
 import PictureInput from './pictureInput';
 
 
-class Upload extends Component {
+export class Upload extends Component {
   static propTypes = {
     uploadToFirebase: PropTypes.func.isRequired,
   }

@@ -19,7 +19,6 @@ class PictureInput extends Component {
 
   onFormSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state.file);
     this.props.uploadToFirebase(this.state.file);
   }
 

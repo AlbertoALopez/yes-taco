@@ -11,7 +11,9 @@ exports[`Dialog renders correctly 1`] = `
       center="xs"
     >
       <Dialog>
-        <PictureInput />
+        <PictureInput
+          uploadToFirebase={[Function]}
+        />
       </Dialog>
     </Row>
   </Col>
