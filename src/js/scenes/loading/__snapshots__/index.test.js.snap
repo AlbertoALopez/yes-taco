@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading renders correctly 1`] = `
+<div
+  className="loading-container"
+>
+  <Col
+    xs={12}
+  >
+    <Row
+      center="xs"
+    >
+      <Dialog>
+        <div>
+          <p>
+            Error detecting image :( Please try again later
+          </p>
+        </div>
+      </Dialog>
+    </Row>
+  </Col>
+</div>
+`;

@@ -1,3 +1,5 @@
+import config from '../../../../config/cloudApi.config.js';
+
 export const DETECT_IMAGE_START = 'DETECT_IMAGE_START';
 
 const detectImageStart = fileUrl => {
@@ -35,7 +37,39 @@ const detectImage = (fileUrl) => {
   return function action(dispatch) {
     dispatch(detectImageStart(fileUrl));
 
-    return;
+    return fetch(`https://vision.googleapis.com/v1/images:annotate?key=${config.GCP_API_KEY}`, {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+       'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        requests: [
+          {
+            image: {
+              source: {
+                imageUri: fileUrl,
+              },
+            },
+            features: [
+              {
+                type: 'LABEL_DETECTION',
+                maxResults: 8,
+              },
+            ],
+          },
+        ],
+      }),
+    })
+      .then(response => response.json())
+      .then((response) => {
+        console.log(response.error);
+        if (response.error) return dispatch(detectImageFailure(response.error));
+
+        console.log(response.responses);
+
+        return dispatch(detectImageSuccess(response.responses[0].labelAnnotations));
+      });
   };
 };
 

@@ -61,6 +61,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './dist/index.html',
+      inject: false,
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],

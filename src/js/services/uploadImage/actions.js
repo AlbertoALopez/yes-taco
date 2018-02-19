@@ -2,12 +2,13 @@ import * as firebase from 'firebase/app';
 import 'firebase/storage';
 import config from '../../../../config/firebase.config.js';
 
+import { detectImage } from '../cloudDetection/actions.js';
+
 // Init firebase app
 const app = firebase.initializeApp(config);
 
 // Create reference to image bucket
 const storageRef = app.storage().ref('images');
-// console.log(ref);
 
 export const UPLOAD_IMAGE_START = 'UPLOAD_IMAGE_START';
 
@@ -57,6 +58,8 @@ const uploadImage = file => {
         return dispatch(uploadImageFailure(snapshot));
       }
 
+      // dispatch action to google vision api with image url
+      dispatch(detectImage(snapshot.downloadURL));
       return dispatch(uploadImageSuccess(snapshot.downloadURL));
     });
   };
