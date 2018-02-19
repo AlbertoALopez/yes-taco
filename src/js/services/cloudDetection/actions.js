@@ -32,7 +32,7 @@ const detectImageSuccess = detectedImageLabels => {
 export const DETECT_IMAGE = 'DETECT_IMAGE';
 
 const detectImage = (fileUrl) => {
-  return function(dispatch) {
+  return function action(dispatch) {
     dispatch(detectImageStart(fileUrl));
 
     return;

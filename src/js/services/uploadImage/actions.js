@@ -11,10 +11,10 @@ console.log(ref);
 
 export const UPLOAD_IMAGE_START = 'UPLOAD_IMAGE_START';
 
-const uploadImageStart = fileRef => {
+const uploadImageStart = file => {
   return {
     type: UPLOAD_IMAGE_START,
-    fileRef,
+    file,
   };
 };
 
@@ -42,11 +42,11 @@ const uploadImageSuccess = uploadedImageUrl => {
 
 export const UPLOAD_IMAGE = 'UPLOAD_IMAGE';
 
-const uploadImage = (fileRef) => {
-  return function(dispatch) {
-    dispatch(uploadImageStart(fileRef));
+const uploadImage = file => {
+  return function action(dispatch) {
+    dispatch(uploadImageStart(file));
 
-    return;
+    return file;
   };
 };
 

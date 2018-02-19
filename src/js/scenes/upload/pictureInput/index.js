@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { MorphIcon } from 'react-svg-buttons';
 import { Row } from 'react-flexbox-grid';
 import './styles.scss';
 
 class PictureInput extends Component {
+  static propTypes = {
+    uploadToFirebase: PropTypes.func.isRequired,
+  }
 
   constructor(props) {
     super(props);
@@ -15,11 +19,11 @@ class PictureInput extends Component {
 
   onFormSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state);
+    console.log(this.state.file);
+    this.props.uploadToFirebase(this.state.file);
   }
 
   onFormChange = (event) => {
-    console.log(event.target.files[0]);
     this.setState({
       file: event.target.files[0],
     });
@@ -37,7 +41,6 @@ class PictureInput extends Component {
       </form>
     );
   }
-
 }
 
 export default PictureInput;

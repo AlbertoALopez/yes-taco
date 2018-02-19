@@ -1,14 +1,14 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 
-import cloudDetectionReducer from './services/cloudDetection/reducers.js';
-import imageUploadReducer from './services/imageUpload/reducers.js';
+import cloudDetection from './services/cloudDetection/reducers.js';
+import imageUpload from './services/uploadImage/reducers.js';
 
 export default function configureStore() {
 
   const reducer = combineReducers({
-    cloudDetectionReducer,
-    imageUploadReducer,
+    cloudDetection,
+    imageUpload,
   });
 
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
