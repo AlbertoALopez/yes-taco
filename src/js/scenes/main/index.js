@@ -9,8 +9,9 @@ import Header from './header';
 import SvgOverlay from './svgOverlay';
 import Dialog from '../../components/dialog';
 
-// Component needed for nested route
+// Components needed for nested routes
 import Upload from '../upload';
+import Loading from '../loading';
 
 import './styles.scss';
 
@@ -49,6 +50,7 @@ const Main = ({ location }) => {
           <section className="main-transition-container">
             <Switch location={location}>
               <Route path="/upload" component={Upload} />
+              <Route path="/loading" component={Loading} />
             </Switch>
           </section>
         </CSSTransition>
