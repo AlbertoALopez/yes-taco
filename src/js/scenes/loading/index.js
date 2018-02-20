@@ -31,7 +31,7 @@ export const Loading = props => (
                 </div>
               :
                 <div>
-                  <p>Image detection succesful. Click below to see results.</p>
+                  <p>Image uploaded. Click below to see results.</p>
                   <button className="icon-button" onClick={() => props.history.push('/results')}>
                     <IconButton type="check" />
                   </button>

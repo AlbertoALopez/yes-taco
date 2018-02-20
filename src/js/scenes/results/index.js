@@ -11,8 +11,8 @@ import './styles.scss';
 
 const isTacoInImageArray = array => array.find(label => label.description === 'taco');
 
-const Results = props => {
-  const tacoImageObject = isTacoInImageArray(props.imageLabels);
+export const Results = props => {
+  const tacoImageObject = isTacoInImageArray(props.imageLabels) || null;
 
   return (
     <div className="results-container">
@@ -20,18 +20,16 @@ const Results = props => {
         <Row center="xs">
           <Dialog>
               {
-                tacoImageObject.description ?
-                  <div className="match-container">
-                    <h3>{Math.round(tacoImageObject.score * 100)}% match for a taco!</h3>
-                    <h4>Click the button above to start again</h4>
-                    <p>These were other matches for your image:</p>
+                tacoImageObject !== null ?
+                  <div>
+                    <h3>Yes Taco!</h3>
                   </div>
                 :
                   <div className="match-container">
                     <p>No tacos found. These were other matches for your image:</p>
+                    <ResultsList imageLabels={props.imageLabels} />
                   </div>
               }
-            <ResultsList imageLabels={props.imageLabels} />
           </Dialog>
         </Row>
       </Col>

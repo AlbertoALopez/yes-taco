@@ -12,18 +12,5 @@ exports[`Component test Should render correctly 1`] = `
       type="file"
     />
   </Row>
-  <button
-    className="form-submit-button"
-    type="submit"
-  >
-    <MorphIcon
-      color="#000"
-      damping={15}
-      size={30}
-      stiffness={150}
-      thickness={1}
-      type="arrowRight"
-    />
-  </button>
 </form>
 `;
