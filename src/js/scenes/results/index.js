@@ -5,6 +5,7 @@ import { Col, Row } from 'react-flexbox-grid';
 
 import Dialog from '../../components/dialog';
 import ResultsList from './resultsList';
+import Confetti from './confetti';
 
 import './styles.scss';
 
@@ -23,6 +24,7 @@ export const Results = props => {
                 tacoImageObject !== null ?
                   <div>
                     <h3>Yes Taco!</h3>
+                    <Confetti />
                   </div>
                 :
                   <div className="match-container">
