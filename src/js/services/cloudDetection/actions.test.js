@@ -1,5 +1,6 @@
 import * as actions from './actions.js';
 import {
+  RESET_IMAGE_CACHE,
   DETECT_IMAGE,
   DETECT_IMAGE_START,
   DETECT_IMAGE_FAILURE,
@@ -7,6 +8,14 @@ import {
 } from './actions.js';
 
 describe('actions', () => {
+  it('should create an action to reset the image cache', () => {
+    const expectedAction = {
+      type: RESET_IMAGE_CACHE,
+    };
+
+    expect(actions.resetImageCache()).toEqual(expectedAction);
+  });
+
   it('should create an action to for an image detection starting', () => {
     const fileUrl = 'www.example.com';
     const expectedAction = {

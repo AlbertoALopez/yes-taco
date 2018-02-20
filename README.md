@@ -12,24 +12,28 @@ storage to store an uploaded image, and Google Cloud Vision API to parse it and 
 /config
 /dist
 /server
-/src      
- /components 
-    /Button
-      /index.js
-      /index.test.js
-  /scenes
-    /Home 
-      /components 
-      /index.js
-      /index.test.js
-      /styles.scss
-  /services
-    /api
-      /actions.js
-      /index.test.js
-      /reducer.js
-  index.js 
-  store.js
+/src
+  /js      
+   /components 
+      /Button
+        /index.js
+        /index.test.js
+    /scenes
+      /Home 
+        /components 
+        /index.js
+        /index.test.js
+        /styles.scss
+    /services
+      /api
+        /actions.js
+        /index.test.js
+        /reducer.js
+    index.js 
+    store.js
+  /style
+    /fonts
+    index.scss
  ```
 Project is organized into components, scenes and services. Global components are in /src/components and are reusable pieces.
 Scenes are akin to pages, and map well to full routes. They have subcomponents and can access the global scope. Services

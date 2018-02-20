@@ -6,7 +6,7 @@ import './styles.scss';
 
 const ResultsList = props => {
   const imageLabelData = props.imageLabels.map(label => (
-    <li className="list-item" key={Math.random(label.score)}>
+    <li className="list-item" key={label.score}>
       <p>{Math.round(label.score * 100)}% chance this is a {label.description}.</p>
     </li>
   ));

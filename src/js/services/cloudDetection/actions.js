@@ -1,5 +1,11 @@
 import config from '../../../../config/cloudApi.config.js';
 
+
+export const RESET_IMAGE_CACHE = 'RESET_IMAGE_CACHE';
+
+const resetImageCache = () => ({ type: RESET_IMAGE_CACHE });
+
+
 export const DETECT_IMAGE_START = 'DETECT_IMAGE_START';
 
 const detectImageStart = fileUrl => {
@@ -74,6 +80,7 @@ const detectImage = (fileUrl) => {
 };
 
 export {
+  resetImageCache,
   detectImageStart,
   detectImageFailure,
   detectImageSuccess,

@@ -1,20 +1,14 @@
-@import "../../../../style/_colors.scss";
-
 .picture-form {
   padding: 0.5rem;
-  height: 5rem;
+  min-height: 5rem;
+  min-width: 15rem;
 }
-
 
 .form-input {
-  margin-left: 1rem;  
-}
-
-.button {
-
-}
-
-.form-submit-button {
-  margin-top: 1rem;
-  cursor: pointer;
+    width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }

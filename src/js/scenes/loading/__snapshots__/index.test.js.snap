@@ -11,19 +11,16 @@ exports[`Loading renders correctly 1`] = `
       center="xs"
     >
       <Dialog>
-        <div>
+        <div
+          className="loading-error"
+        >
           <p>
             Error detecting image :( Click below to try again.
           </p>
-          <button
-            className="icon-button"
-            onClick={[Function]}
-          >
-            <IconButton
-              size={30}
-              type="check"
-            />
-          </button>
+          <IconButton
+            clickHandler={[Function]}
+            type="check"
+          />
         </div>
       </Dialog>
     </Row>

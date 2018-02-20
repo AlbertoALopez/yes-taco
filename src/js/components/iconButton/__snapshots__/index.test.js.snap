@@ -1,12 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button renders correctly 1`] = `
-<MorphIcon
-  color="#000"
-  damping={15}
+<Button
+  clickHandler={[Function]}
   size={30}
-  stiffness={150}
-  thickness={1}
   type="check"
 />
 `;

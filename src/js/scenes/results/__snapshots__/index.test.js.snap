@@ -11,20 +11,17 @@ exports[`Loading renders correctly 1`] = `
       center="xs"
     >
       <Dialog>
-        <div>
+        <div
+          className="match-container"
+        >
           <h3>
             Yes Taco!
           </h3>
-          <button
-            className="icon-button"
-            onClick={[Function]}
+          <IconButton
+            clickHandler={[Function]}
           >
             Start Again
-            <IconButton
-              size={30}
-              type="check"
-            />
-          </button>
+          </IconButton>
           <Confetti />
         </div>
       </Dialog>

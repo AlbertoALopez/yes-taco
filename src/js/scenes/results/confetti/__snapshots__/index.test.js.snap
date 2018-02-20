@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confetti renders correctly 1`] = `
+<div
+  className="confetti-container"
+>
+  <div
+    className="confetti"
+  />
+  <div
+    className="confetti"
+  />
+  <div
+    className="confetti"
+  />
+  <div
+    className="confetti"
+  />
+  <div
+    className="confetti"
+  />
+  <div
+    className="confetti"
+  />
+  <div
+    className="confetti"
+  />
+  <div
+    className="confetti"
+  />
+  <div
+    className="confetti"
+  />
+  <div
+    className="confetti"
+  />
+  <div
+    className="confetti"
+  />
+  <div
+    className="confetti"
+  />
+</div>
+`;

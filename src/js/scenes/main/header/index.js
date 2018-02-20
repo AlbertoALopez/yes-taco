@@ -5,8 +5,8 @@ import './styles.scss';
 
 const AppHeader = props => (
   <Row>
-    <Col id="header-container" lg={12}>
-      <div id="intro-title">YES TACO</div>
+    <Col className="header-container" lg={12}>
+      <div className="intro-title">YES TACO</div>
     </Col>
   </Row>
 );

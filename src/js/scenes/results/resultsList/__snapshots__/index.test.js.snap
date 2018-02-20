@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultsList renders correctly 1`] = `
+<div
+  className="results-list-container"
+>
+  <ul
+    className="results-list"
+  >
+    <li
+      className="list-item"
+    >
+      <p>
+        NaN
+        % chance this is a 
+        dog
+        .
+      </p>
+    </li>
+  </ul>
+</div>
+`;
