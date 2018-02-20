@@ -1,6 +1,6 @@
 #header-container {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 #intro-title {
@@ -36,5 +36,11 @@
 @media all and (max-width: 480px) {
   #intro-title {
     font-size: 4rem;
+  }
+}
+
+@media all and (max-width: 360px) {
+  #intro-title {
+    font-size: 3rem;
   }
 }

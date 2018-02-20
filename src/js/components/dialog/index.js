@@ -5,8 +5,13 @@ import './styles.scss';
 
 const Dialog = props => (
   <div className="dialog-container">
-    <p className="dialog-text">{props.dialogText}</p>
-      {props.children}
+    {
+      props.dialogText ?
+        <p className="dialog-text">{props.dialogText}</p>
+      :
+        null
+    }
+    {props.children}
   </div>
 );
 

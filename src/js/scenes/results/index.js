@@ -28,10 +28,13 @@ export class Results extends Component {
 
   componentDidMount() {
     // If no file has been uploaded
-    if (!this.props.file) {
+    if (this.props.file === null) {
       this.props.history.push('/upload');
     }
   }
+
+  clickHandler = () => setTimeout(() => this.props.history.push('/upload'), 500);
+
   render() {
     const tacoImageObject = isTacoInImageArray(this.props.imageLabels) || null;
 
@@ -44,17 +47,17 @@ export class Results extends Component {
                   tacoImageObject !== null ?
                     <div className="match-container">
                       <h3>Yes Taco!</h3>
-                      <button className="" onClick={() => props.history.push('/upload')}>
+                      <IconButton clickHandler={this.clickHandler}>
                         Start Again
-                      </button>
+                      </IconButton>
                       <Confetti />
                     </div>
                   :
                     <div className="match-container">
                       <h3>No tacos found. These were other matches for your image</h3>
-                      <button className="results-button" onClick={() => this.props.history.push('/upload')}>
+                      <IconButton clickHandler={this.clickHandler}>
                         Start Again
-                      </button>
+                      </IconButton>
                       <ResultsList imageLabels={this.props.imageLabels} />
                     </div>
                 }

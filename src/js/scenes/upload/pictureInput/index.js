@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Row } from 'react-flexbox-grid';
-// import IconButton from '../../../components/iconButton';
+import IconButton from '../../../components/iconButton';
 import './styles.scss';
 
 class PictureInput extends Component {
@@ -23,12 +23,6 @@ class PictureInput extends Component {
   onFormSubmit = event => (async () => {
     event.preventDefault();
 
-    if (this.state.file === null) {
-      return this.setState({
-        errorMessage: 'Error, please upload an image',
-      });
-    }
-
     await this.props.uploadToFirebase(this.state.file);
   })().then(() => {
     this.props.transitionToLoading();
@@ -48,9 +42,9 @@ class PictureInput extends Component {
         </Row>
         {
           this.state.file !== null ?
-            <button className="form-submit-button" type="submit">
+            <IconButton>
               Is it a taco?
-            </button>
+            </IconButton>
           :
           null
         }

@@ -11,24 +11,28 @@ A web application to detect if a provided image is a taco or not a taco. Built o
 /config
 /dist
 /server
-/src      
- /components 
-    /Button
-      /index.js
-      /index.test.js
-  /scenes
-    /Home 
-      /components 
-      /index.js
-      /index.test.js
-      /styles.scss
-  /services
-    /api
-      /actions.js
-      /index.test.js
-      /reducer.js
-  index.js 
-  store.js
+/src
+  /js      
+   /components 
+      /Button
+        /index.js
+        /index.test.js
+    /scenes
+      /Home 
+        /components 
+        /index.js
+        /index.test.js
+        /styles.scss
+    /services
+      /api
+        /actions.js
+        /index.test.js
+        /reducer.js
+    index.js 
+    store.js
+  /style
+    /fonts
+    index.scss
  ```
 Project is organized into components, scenes and services. Global components are in /src/components and are reusable pieces.
 Scenes are akin to pages, and map well to full routes. They have subcomponents and can access the global scope. Services
@@ -48,4 +52,3 @@ FB_STORAGEBUCKET
 `npm run test` to run tests with jest 
 `npm run start` bundles your javascript and css files with webpack and serves them on a dev server.
 `npm run build` builds production bundles and puts them into /dist folder.
->>>>>>> Stashed changes

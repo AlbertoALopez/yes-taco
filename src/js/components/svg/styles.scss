@@ -1,13 +1,8 @@
 @import "../../../style/_colors.scss";
 
-.taco-svg {
-
-}
-
 #taco-svg {
   margin: auto;
   path {
-    // z-index: 1;
     fill-opacity: 0;
     fill: $taco-svg;
     stroke: #000;
@@ -17,7 +12,6 @@
     -moz-animation: draw 5s linear 1s 1 forwards;
     -webkit-animation: draw 5s linear 1s 1 forwards;
     animation: draw 3s linear 1s 1 forwards;
-    // animation-delay: .5s;
   }
 }
 

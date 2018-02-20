@@ -24,7 +24,7 @@ export class Loading extends Component {
 
   componentDidUpdate() {
     if (this.props.uploadedImageUrl) {
-      setTimeout(() => this.props.history.push('/results'), 1500);
+      setTimeout(() => this.props.history.push('/results'), 3500);
     }
   }
 
