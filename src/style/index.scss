@@ -1,0 +1,42 @@
+/* Imports
+ ========================================================================== */
+
+@import "_normalize.scss";
+@import "_colors.scss";
+@import "_transition-animation.scss";
+
+
+/* Fonts
+ ========================================================================== */
+@font-face {
+  font-family: 'Mexicana';
+  src: url('./fonts/cfmexicana.woff2') format('woff2'),
+       url('./fonts/cfmexicana.woff') format('woff'),
+       url('./fonts/cfmexicana.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Body
+ ========================================================================== */
+
+ body {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 300;
+  background-color: $primary-color;
+  overflow: hidden;
+ }
+
+ body, html {
+  margin: 0;
+  padding: 0;
+ }
+
+ * {
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ /* Headings
+ ========================================================================== */

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component test Should render correctly 1`] = `
+<form
+  className="picture-form"
+  onSubmit={[Function]}
+>
+  <Row>
+    <input
+      className="form-input"
+      onChange={[Function]}
+      type="file"
+    />
+  </Row>
+</form>
+`;

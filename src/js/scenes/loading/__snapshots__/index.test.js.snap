@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading renders correctly 1`] = `
+<div
+  className="loading-container"
+>
+  <Col
+    xs={12}
+  >
+    <Row
+      center="xs"
+    >
+      <Dialog>
+        <div>
+          <p>
+            Error detecting image :( Click below to try again.
+          </p>
+          <button
+            className="icon-button"
+            onClick={[Function]}
+          >
+            <IconButton
+              size={30}
+              type="check"
+            />
+          </button>
+        </div>
+      </Dialog>
+    </Row>
+  </Col>
+</div>
+`;

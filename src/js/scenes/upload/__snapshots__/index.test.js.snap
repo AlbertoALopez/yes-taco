@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog renders correctly 1`] = `
+<div
+  className="upload-container"
+>
+  <Col
+    xs={12}
+  >
+    <Row
+      center="xs"
+    >
+      <Dialog>
+        <PictureInput
+          transitionToLoading={[Function]}
+          uploadToFirebase={[Function]}
+        />
+      </Dialog>
+    </Row>
+  </Col>
+</div>
+`;

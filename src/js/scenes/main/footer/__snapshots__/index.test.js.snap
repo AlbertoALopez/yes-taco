@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<div
+  className="footer-text-container"
+>
+  <p>
+    Credit to Jing-Yang for 
+    <a
+      href="https://itunes.apple.com/us/app/not-hotdog/id1212457521?mt=8"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      NotHotDog
+    </a>
+  </p>
+</div>
+`;

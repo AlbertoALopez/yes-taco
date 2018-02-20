@@ -1,0 +1,48 @@
+#container {
+  height: 100vh;
+  width: 100vw;
+}
+
+#container-col {
+  height: 100vh;
+}
+
+#root {
+
+}
+
+#icon-arrow-down {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+#dialog-main {
+  animation-name: slideInDown;
+  animation-duration: 3s;
+  margin-top: 1.5rem;
+}
+
+@keyframes slideInDown {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: linear(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}

@@ -1,3 +1,23 @@
 {
-  "presets": ["env", "react"]
+  "presets": [["env", { "modules": false }], "react", "stage-2"],
+  "plugins": [
+    [
+      "transform-class-properties",
+    ]
+  ],
+  "env": {
+    "development": {
+      "plugins": ["react-hot-loader/babel", "transform-class-properties"]
+    },
+    "test": {
+      "presets": [
+        ["env", {"modules": "commonjs"}],
+        "react",
+        "stage-2"
+      ],
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
+    }
+  }
 }
