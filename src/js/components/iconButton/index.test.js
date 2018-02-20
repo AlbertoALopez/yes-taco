@@ -6,3 +6,11 @@ test('Button renders correctly', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('Button has a click workking click handler', () => {
+  const clickHandler = jest.fn();
+  const wrapper = mount(<IconButton clickHandler={clickHandler} />);
+
+  wrapper.find('Button').simulate('click');
+  expect(clickHandler.mock.calls.length).toBe(1);
+});

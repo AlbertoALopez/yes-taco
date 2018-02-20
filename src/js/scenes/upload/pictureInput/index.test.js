@@ -28,7 +28,7 @@ describe('Component test', () => {
         preventDefault: jest.fn(),
       });
 
-      expect(props.uploadToFirebase.mock.calls.length).toBe(0);
+      expect(props.uploadToFirebase.mock.calls.length).toBe(1);
     });
   });
 

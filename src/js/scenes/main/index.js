@@ -17,7 +17,7 @@ import Results from '../results';
 import './styles.scss';
 
 
-const Main = ({ location }) => {
+export const Main = ({ location }) => {
   // Get only current route, otherwise home
   const currentKey = location.pathname.split('/')[1] || '/';
   const timeout = { enter: 500, exit: 500 };
@@ -58,6 +58,7 @@ const Main = ({ location }) => {
         </CSSTransition>
       </TransitionGroup>
       <SvgOverlay />
+      <Footer />
     </Grid>
   );
 };

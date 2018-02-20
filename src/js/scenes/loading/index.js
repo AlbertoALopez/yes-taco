@@ -29,7 +29,6 @@ export class Loading extends Component {
   }
 
   render() {
-
     return (
       <div className="loading-container">
         <Col xs={12}>
@@ -43,11 +42,9 @@ export class Loading extends Component {
                   </div>
                 :
                   this.props.uploadErrorMessage || this.props.detectImageError ?
-                    <div>
+                    <div className="loading-error">
                       <p>Error detecting image :( Click below to try again.</p>
-                      <button className="icon-button" onClick={() => this.props.history.push('/upload')}>
-                        <IconButton type="check" />
-                      </button>
+                      <IconButton type="check" clickHandler={() => this.props.history.push('/upload')} />
                     </div>
                   :
                     <div>
@@ -63,6 +60,7 @@ export class Loading extends Component {
 }
 
 Loading.propTypes = {
+  detectedImageLabels: PropTypes.array,
   uploadingImage: PropTypes.bool.isRequired,
   uploadErrorMessage: PropTypes.string,
   detectingImage: PropTypes.bool.isRequired,
@@ -70,7 +68,6 @@ Loading.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
-  uploadedImageUrl: PropTypes.string,
   file: PropTypes.object.isRequired,
 };
 
@@ -79,7 +76,6 @@ const mapStateToProps = state => ({
   uploadErrorMessage: state.imageUpload.errorMessage,
   detectingImage: state.cloudDetection.isFetching,
   detectImageError: state.cloudDetection.errorMessage,
-  uploadedImageUrl: state.imageUpload.uploadedImageUrl,
   detectedImageLabels: state.cloudDetection.detectedImageLabels,
   file: state.imageUpload.file,
 });
