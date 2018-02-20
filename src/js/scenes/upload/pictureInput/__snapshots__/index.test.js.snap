@@ -5,12 +5,22 @@ exports[`Component test Should render correctly 1`] = `
   className="picture-form"
   onSubmit={[Function]}
 >
-  <Row>
+  <Row
+    center="xs"
+  >
     <input
       className="form-input"
+      id="file"
+      name="file"
       onChange={[Function]}
       type="file"
     />
+    <label
+      className="file-label button"
+      htmlFor="file"
+    >
+      Choose a file
+    </label>
   </Row>
 </form>
 `;

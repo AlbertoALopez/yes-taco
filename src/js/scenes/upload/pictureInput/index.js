@@ -37,8 +37,9 @@ class PictureInput extends Component {
   render() {
     return (
       <form className="picture-form" onSubmit={this.onFormSubmit}>
-        <Row>
-          <input className="form-input" type="file" onChange={this.onFormChange} />
+        <Row center="xs">
+          <input id="file" name="file" className="form-input" type="file" onChange={this.onFormChange} />
+          <label className="file-label button" htmlFor="file">Choose a file</label>
         </Row>
         {
           this.state.file !== null ?
