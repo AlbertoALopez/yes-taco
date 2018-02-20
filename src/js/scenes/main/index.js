@@ -12,6 +12,7 @@ import Dialog from '../../components/dialog';
 // Components needed for nested routes
 import Upload from '../upload';
 import Loading from '../loading';
+import Results from '../results';
 
 import './styles.scss';
 
@@ -28,7 +29,7 @@ const Main = ({ location }) => {
         <Row center="xs">
           <div id="dialog-main">
             <Dialog
-              dialogText="What have you got there? Is it a taco? Find out by uploading a picture or pointing us to a URL!"
+              dialogText="What have you got there? Is it a taco? Find out by uploading a picture or pointing me to a URL!"
             >
               <Link to="/upload">
                 <HoverMorphIcon
@@ -51,12 +52,12 @@ const Main = ({ location }) => {
             <Switch location={location}>
               <Route path="/upload" component={Upload} />
               <Route path="/loading" component={Loading} />
+              <Route path="/results" component={Results} />
             </Switch>
           </section>
         </CSSTransition>
       </TransitionGroup>
       <SvgOverlay />
-      <Footer />
     </Grid>
   );
 };

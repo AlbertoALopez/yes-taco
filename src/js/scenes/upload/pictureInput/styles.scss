@@ -1,15 +1,20 @@
+@import "../../../../style/_colors.scss";
+
 .picture-form {
   padding: 0.5rem;
-  // width: 25rem;
   height: 5rem;
 }
+
 
 .form-input {
   margin-left: 1rem;
 }
 
+.button {
+
+}
+
 .form-submit-button {
-  background: transparent;
-  border: none;
+  margin-top: 1rem;
   cursor: pointer;
 }

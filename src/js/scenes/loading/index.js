@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import Dialog from '../../components/dialog';
 import { Col, Row } from 'react-flexbox-grid';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
+import IconButton from '../../components/iconButton';
 
 import './styles.scss';
 
@@ -20,9 +23,19 @@ export const Loading = props => (
               </div>
             :
               props.uploadErrorMessage || props.detectImageError ?
-                <div><p>Error detecting image :( Please try again later</p></div>
+                <div>
+                  <p>Error detecting image :( Click below to try again.</p>
+                  <button className="icon-button" onClick={() => props.history.push('/upload')}>
+                    <IconButton type="check" />
+                  </button>
+                </div>
               :
-                <div><p>Success!</p></div>
+                <div>
+                  <p>Image detection succesful. Click below to see results.</p>
+                  <button className="icon-button" onClick={() => props.history.push('/results')}>
+                    <IconButton type="check" />
+                  </button>
+                </div>
           }
         </Dialog>
       </Row>
@@ -35,6 +48,9 @@ Loading.propTypes = {
   uploadErrorMessage: PropTypes.string,
   detectingImage: PropTypes.bool.isRequired,
   detectImageError: PropTypes.string,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -44,4 +60,7 @@ const mapStateToProps = state => ({
   detectImageError: state.cloudDetection.errorMessage,
 });
 
-export default connect(mapStateToProps, null)(Loading);
+// HOC to access browser history
+const LoadingWithRouter = ({ history }) => (Loading);
+
+export default connect(mapStateToProps, null)(withRouter(Loading));

@@ -4,11 +4,12 @@ import { Route } from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader';
 
 import Main from './main';
-import Upload from './upload';
+import Footer from './main/footer';
 
 const Routes = () => (
   <div>
     <Route path="/" component={Main} />
+    <Footer />
   </div>
 );
 

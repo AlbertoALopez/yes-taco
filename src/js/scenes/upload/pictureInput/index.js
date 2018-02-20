@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { MorphIcon } from 'react-svg-buttons';
 import { Row } from 'react-flexbox-grid';
+import IconButton from '../../../components/iconButton';
 import './styles.scss';
 
 class PictureInput extends Component {
@@ -22,6 +22,10 @@ class PictureInput extends Component {
   onFormSubmit = event => (async () => {
     event.preventDefault();
 
+    if (this.state.file === null) {
+      return this.setState
+    }
+
     await this.props.uploadToFirebase(this.state.file);
   })().then(() => {
     this.props.transitionToLoading();
@@ -39,9 +43,14 @@ class PictureInput extends Component {
         <Row>
           <input className="form-input" type="file" onChange={this.onFormChange} />
         </Row>
-        <button className="form-submit-button" type="submit">
-          <MorphIcon type="arrowRight" size={30} />
-        </button>
+        {
+          this.state.file !== null ?
+            <button className="form-submit-button" type="submit">
+              Is it a taco?
+            </button>
+          :
+          null
+        }
       </form>
     );
   }
