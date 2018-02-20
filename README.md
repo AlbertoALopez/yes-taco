@@ -1,9 +1,10 @@
 [![Build Status](https://travis-ci.org/AlbertoALopez/yes-taco.svg?branch=master)](https://travis-ci.org/AlbertoALopez/yes-taco)
 [![Maintainability](https://api.codeclimate.com/v1/badges/86a347fe02ffb2874563/maintainability)](https://codeclimate.com/github/AlbertoALopez/yes-taco/maintainability)
 
-## Yes Taco!
+## Yes Taco
 
-Built on React, Redux and React Router 4. 
+A web application to detect if a provided image is a taco or not a taco. Built on React, Redux and React Router 4. Uses Firebase
+storage to store an uploaded image, and Google Cloud Vision API to parse it and return a set of labels describing the image.
 
 ### Project structure
 ```

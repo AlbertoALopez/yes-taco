@@ -1,6 +1,7 @@
 @import "../../../style/_colors.scss";
 
 .dialog-container {
+  z-index: 2;
   min-width: 10rem;
   box-shadow: 0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.15);
   padding: 0.5em 0.5em;

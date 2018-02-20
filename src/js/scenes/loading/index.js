@@ -10,38 +10,57 @@ import IconButton from '../../components/iconButton';
 import './styles.scss';
 
 
-export const Loading = props => (
-  <div className="loading-container">
-    <Col xs={12}>
-      <Row center="xs">
-        <Dialog>
-          {
-            props.uploadingImage || props.detectingImage ?
-              <div>
-                <div className="loader" />
-                <p>Please wait, uploading image and checking for tacos.</p>
-              </div>
-            :
-              props.uploadErrorMessage || props.detectImageError ?
-                <div>
-                  <p>Error detecting image :( Click below to try again.</p>
-                  <button className="icon-button" onClick={() => props.history.push('/upload')}>
-                    <IconButton type="check" />
-                  </button>
-                </div>
-              :
-                <div>
-                  <p>Image uploaded. Click below to see results.</p>
-                  <button className="icon-button" onClick={() => props.history.push('/results')}>
-                    <IconButton type="check" />
-                  </button>
-                </div>
-          }
-        </Dialog>
-      </Row>
-    </Col>
-  </div>
-);
+export class Loading extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    // If no file has been uploaded
+    if (!this.props.file) {
+      this.props.history.push('/upload');
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.props.uploadedImageUrl) {
+      setTimeout(() => this.props.history.push('/results'), 1500);
+    }
+  }
+
+  render() {
+
+    return (
+      <div className="loading-container">
+        <Col xs={12}>
+          <Row center="xs">
+            <Dialog>
+              {
+                this.props.uploadingImage || this.props.detectingImage ?
+                  <div>
+                    <div className="loader" />
+                    <p>Please wait, uploading image and checking for tacos.</p>
+                  </div>
+                :
+                  this.props.uploadErrorMessage || this.props.detectImageError ?
+                    <div>
+                      <p>Error detecting image :( Click below to try again.</p>
+                      <button className="icon-button" onClick={() => this.props.history.push('/upload')}>
+                        <IconButton type="check" />
+                      </button>
+                    </div>
+                  :
+                    <div>
+                      <p>Image uploaded. Let&apos;s see the results.</p>
+                    </div>
+              }
+            </Dialog>
+          </Row>
+        </Col>
+      </div>
+    );
+  }
+}
 
 Loading.propTypes = {
   uploadingImage: PropTypes.bool.isRequired,
@@ -51,6 +70,8 @@ Loading.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
+  uploadedImageUrl: PropTypes.string,
+  file: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -58,6 +79,8 @@ const mapStateToProps = state => ({
   uploadErrorMessage: state.imageUpload.errorMessage,
   detectingImage: state.cloudDetection.isFetching,
   detectImageError: state.cloudDetection.errorMessage,
+  uploadedImageUrl: state.imageUpload.uploadedImageUrl,
+  file: state.imageUpload.file,
 });
 
 // HOC to access browser history
