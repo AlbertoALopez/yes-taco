@@ -15,6 +15,7 @@ exports[`Loading renders correctly 1`] = `
           <h3>
             Yes Taco!
           </h3>
+          <Confetti />
         </div>
       </Dialog>
     </Row>
