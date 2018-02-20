@@ -42,11 +42,10 @@ export class Results extends Component {
             <Dialog>
                 {
                   tacoImageObject !== null ?
-                    <div>
+                    <div className="match-container">
                       <h3>Yes Taco!</h3>
-                      <button className="icon-button" onClick={() => props.history.push('/upload')}>
+                      <button className="" onClick={() => props.history.push('/upload')}>
                         Start Again
-                        <IconButton type="check" />
                       </button>
                       <Confetti />
                     </div>
