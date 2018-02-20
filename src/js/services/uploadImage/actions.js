@@ -76,6 +76,7 @@ const uploadImage = file => {
 };
 
 export {
+  setFileBlob,
   uploadImageStart,
   uploadImageFailure,
   uploadImageSuccess,
