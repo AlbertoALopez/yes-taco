@@ -3,6 +3,7 @@ import {
   DETECT_IMAGE_FAILURE,
   DETECT_IMAGE_SUCCESS,
   DETECT_IMAGE,
+  RESET_IMAGE_CACHE,
 } from './actions.js';
 
 const initialState = {
@@ -12,6 +13,7 @@ const initialState = {
 };
 
 export default function cloudDetectionReducer(state = initialState, action) {
+
   if (action.type === DETECT_IMAGE_START) {
     return {
       ...state,
@@ -32,6 +34,13 @@ export default function cloudDetectionReducer(state = initialState, action) {
       ...state,
       isFetching: false,
       detectedImageLabels: action.detectedImageLabels,
+    };
+  }
+
+  else if (action.type === RESET_IMAGE_CACHE) {
+    return {
+      ...state,
+      detectedImageLabels: [],
     };
   }
 

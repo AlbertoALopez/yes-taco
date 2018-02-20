@@ -26,7 +26,7 @@ class PictureInput extends Component {
     await this.props.uploadToFirebase(this.state.file);
   })().then(() => {
     this.props.transitionToLoading();
-  });;
+  });
 
   onFormChange = (event) => {
     this.setState({

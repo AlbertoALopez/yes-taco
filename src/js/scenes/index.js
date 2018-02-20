@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Route } from 'react-router-dom';
-import { AppContainer } from 'react-hot-loader';
 
 import Main from './main';
 import Footer from './main/footer';
@@ -14,11 +13,9 @@ const Routes = () => (
 );
 
 const App = () => (
-  <AppContainer>
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
-  </AppContainer>
+  <BrowserRouter>
+    <Routes />
+  </BrowserRouter>
 );
 
 export default App;

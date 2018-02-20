@@ -22,9 +22,9 @@ export class Loading extends Component {
     }
   }
 
-  componentDidUpdate() {
-    if (this.props.uploadedImageUrl) {
-      setTimeout(() => this.props.history.push('/results'), 3500);
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.detectedImageLabels.length !== 0) {
+      setTimeout(() => this.props.history.push('/results'), 1500);
     }
   }
 
@@ -80,6 +80,7 @@ const mapStateToProps = state => ({
   detectingImage: state.cloudDetection.isFetching,
   detectImageError: state.cloudDetection.errorMessage,
   uploadedImageUrl: state.imageUpload.uploadedImageUrl,
+  detectedImageLabels: state.cloudDetection.detectedImageLabels,
   file: state.imageUpload.file,
 });
 

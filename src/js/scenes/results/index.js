@@ -8,6 +8,8 @@ import Dialog from '../../components/dialog';
 import ResultsList from './resultsList';
 import Confetti from './confetti';
 
+import { resetImageCache } from '../../services/cloudDetection/actions.js';
+
 import './styles.scss';
 
 
@@ -20,6 +22,7 @@ export class Results extends Component {
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }).isRequired,
+    resetImageCache: PropTypes.func.isRequired,
   }
 
   constructor(props) {
@@ -33,7 +36,11 @@ export class Results extends Component {
     }
   }
 
-  clickHandler = () => setTimeout(() => this.props.history.push('/upload'), 500);
+  clickHandler = () => {
+    this.props.resetImageCache();
+    this.props.history.push('/upload');
+  }
+
 
   render() {
     const tacoImageObject = isTacoInImageArray(this.props.imageLabels) || null;
@@ -75,7 +82,9 @@ const mapStateToProps = state => ({
   file: state.imageUpload.file,
 });
 
+const mapDispatchToProps = dispatch => ({ resetImageCache: () => dispatch(resetImageCache()) });
+
 // Create HOC for react router
 const ResultsWithRouter = ({ history }) => (Results.render);
 
-export default connect(mapStateToProps, null)(withRouter(Results));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Results));
