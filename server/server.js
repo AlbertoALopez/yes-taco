@@ -11,6 +11,7 @@ const config = require('../config/webpack.config.js');
 const compiler = webpack(config);
 
 if (isDevelopment) {
+  console.log('dev');
   // Tell express to use the webpack-dev-middleware and use
   // the webpack.config.js configuration file as a base.
   app.use(require('webpack-dev-middleware')(compiler, {
@@ -25,9 +26,16 @@ if (isDevelopment) {
     heartbeat: 10 * 1000,
     path: '/__webpack_hmr',
   }));
+
+  // Send only html file with bundles in development
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../dist/index.html'));
+  });
 }
 
 app.use(compression());
+
+app.use('/', express.static(path.join(__dirname, '../dist')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../dist/index.html'));

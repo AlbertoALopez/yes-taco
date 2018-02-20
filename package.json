@@ -7,9 +7,9 @@
     "test": "export NODE_ENV=test && jest",
     "watch": "webpack --watch",
     "dev": "webpack-dev-server --open",
-    "start": "node ./server/server.js",
+    "start": "NODE_ENV=production node ./server/server.js",
     "deploy": "now -e NODE_ENV=production --token $NOW_TOKEN --npm",
-    "alias": "now alias --token=$NOW_TOKEN"
+    "alias": "now alias --token=$NOW_TOKEN",
     "build": "webpack --config ./config/webpack.production.config.js"
   },
   "keywords": [
@@ -73,6 +73,11 @@
     "webpack-hot-middleware": "^2.21.0",
     "webpack-merge": "^4.1.1"
   },
+  "now": {
+    "name": "yes-taco",
+    "alias": "yes-taco",
+    "type": "npm"
+  },
   "jest": {
     "moduleFileExtensions": [
       "js",
@@ -99,10 +104,5 @@
     "transform": {
       "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest"
     }
-  },
-  "now": {
-    "name": "yes-taco",
-    "alias": "yes-taco",
-    "type": "npm"
   }
 }
