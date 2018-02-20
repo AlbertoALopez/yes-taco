@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Col, Row } from 'react-flexbox-grid';
 import { withRouter } from 'react-router-dom';
+import IconButton from '../../components/iconButton';
 import Dialog from '../../components/dialog';
 import ResultsList from './resultsList';
 import Confetti from './confetti';
@@ -43,11 +44,18 @@ export class Results extends Component {
                   tacoImageObject !== null ?
                     <div>
                       <h3>Yes Taco!</h3>
+                      <button className="icon-button" onClick={() => props.history.push('/upload')}>
+                        Start Again
+                        <IconButton type="check" />
+                      </button>
                       <Confetti />
                     </div>
                   :
                     <div className="match-container">
                       <h3>No tacos found. These were other matches for your image</h3>
+                      <button className="results-button" onClick={() => this.props.history.push('/upload')}>
+                        Start Again
+                      </button>
                       <ResultsList imageLabels={this.props.imageLabels} />
                     </div>
                 }

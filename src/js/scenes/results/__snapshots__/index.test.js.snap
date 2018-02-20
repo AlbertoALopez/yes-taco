@@ -15,6 +15,16 @@ exports[`Loading renders correctly 1`] = `
           <h3>
             Yes Taco!
           </h3>
+          <button
+            className="icon-button"
+            onClick={[Function]}
+          >
+            Start Again
+            <IconButton
+              size={30}
+              type="check"
+            />
+          </button>
           <Confetti />
         </div>
       </Dialog>
