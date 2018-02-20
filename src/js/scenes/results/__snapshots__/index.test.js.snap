@@ -11,30 +11,11 @@ exports[`Loading renders correctly 1`] = `
       center="xs"
     >
       <Dialog>
-        <div
-          className="match-container"
-        >
+        <div>
           <h3>
-            10000
-            % match for a taco!
+            Yes Taco!
           </h3>
-          <h4>
-            Click the button above to start again
-          </h4>
-          <p>
-            These were other matches for your image:
-          </p>
         </div>
-        <ResultsList
-          imageLabels={
-            Array [
-              Object {
-                "description": "taco",
-                "score": 100,
-              },
-            ]
-          }
-        />
       </Dialog>
     </Row>
   </Col>

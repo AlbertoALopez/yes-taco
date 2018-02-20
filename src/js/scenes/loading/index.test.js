@@ -7,6 +7,9 @@ test('Loading renders correctly', () => {
     uploadErrorMessage: null,
     detectingImage: false,
     detectImageError: 'Error',
+    history: {
+      push: jest.fn(),
+    },
   };
 
   const wrapper = shallow(<Loading {...props} />);

@@ -26,7 +26,7 @@ export const Results = props => {
                   </div>
                 :
                   <div className="match-container">
-                    <p>No tacos found. These were other matches for your image:</p>
+                    <h3>No tacos found. These were other matches for your image</h3>
                     <ResultsList imageLabels={props.imageLabels} />
                   </div>
               }

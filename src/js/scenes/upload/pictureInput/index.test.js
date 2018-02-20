@@ -27,7 +27,8 @@ describe('Component test', () => {
       form.props().onSubmit({
         preventDefault: jest.fn(),
       });
-      expect(props.uploadToFirebase.mock.calls.length).toBe(1);
+
+      expect(props.uploadToFirebase.mock.calls.length).toBe(0);
     });
   });
 
