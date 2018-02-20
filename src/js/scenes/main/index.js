@@ -22,18 +22,21 @@ export const Main = ({ location }) => {
   const currentKey = location.pathname.split('/')[1] || '/';
   const timeout = { enter: 500, exit: 500 };
 
+  const dialogText = `What have you got there?
+                      Is it a taco? Find out by uploading
+                      a picture or pointing me to a URL!`;
   return (
-    <Grid fluid id="container">
+    <Grid fluid className="container">
       <Header />
       <Col lg={12} xs={12}>
         <Row center="xs">
-          <div id="dialog-main">
+          <div className="dialog-main">
             <Dialog
-              dialogText="What have you got there? Is it a taco? Find out by uploading a picture or pointing me to a URL!"
+              dialogText={dialogText}
             >
               <Link to="/upload">
                 <HoverMorphIcon
-                  id="icon-arrow-down"
+                  className="icon-arrow-down"
                   baseType="arrowDown"
                   hoverType="plus"
                   size={30}
