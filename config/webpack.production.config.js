@@ -1,32 +1,28 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HotModuleReplacementPlugin = require('webpack-hot-middleware');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
   filename: '[name].[contenthash].css',
-  disable: process.env.NODE_ENV === 'development',
+  allChunks: true,
 });
-
 
 module.exports = {
   entry: [
+    'babel-polyfill',
     'webpack-hot-middleware/client?reload=true',
     'react-hot-loader/patch',
     './src/js/index.js',
   ],
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
-    filename: 'bundle.js',
+    filename: '[name].[chunkhash].js',
   },
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist',
-    hot: true,
-    https: false,
-  },
+  devtool: 'cheap-module-source-map',
   module: {
     rules: [
       {
@@ -65,10 +61,50 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production'),
+    }),
     new HtmlWebpackPlugin({
       template: './dist/index.html',
+      minify: {
+        collapseWhitespace: true,
+        collapseInlineTagWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+      },
     }),
-    new webpack.HotModuleReplacementPlugin(),
     extractSass,
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.[chunkhash].js',
+      minChunks(module) {
+        return module.context &&
+           module.context.indexOf('node_modules') >= 0;
+      },
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+        screw_ie8: true,
+        conditionals: true,
+        unused: true,
+        comparisons: true,
+        sequences: true,
+        dead_code: true,
+        evaluate: true,
+        if_return: true,
+        join_vars: true,
+      },
+      output: {
+        comments: false,
+      },
+    }),
+    new webpack.HashedModuleIdsPlugin(),
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'defer',
+    }),
+    // new StyleExtHtmlWebpackPlugin({
+    //   minify: true,
+    // }),
   ],
 };

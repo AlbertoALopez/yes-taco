@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
+const compression = require('compression');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -16,7 +17,6 @@ if (isDevelopment) {
     publicPath: config.output.publicPath,
     historyApiFallback: true,
     hot: true,
-
   }));
 
   // Webpack hot middleware config options
@@ -26,6 +26,8 @@ if (isDevelopment) {
     path: '/__webpack_hmr',
   }));
 }
+
+app.use(compression());
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../dist/index.html'));
